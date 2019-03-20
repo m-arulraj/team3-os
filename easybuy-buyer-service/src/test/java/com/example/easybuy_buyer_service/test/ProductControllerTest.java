@@ -45,14 +45,14 @@ public class ProductControllerTest {
 	@Test
 	public void testProductController() throws Exception {
 		Product product = new Product();
-		product.setName("MI earphones");
-		product.setPrice(699.00);
-		product.setDescription("Stylish Look");
+		product.setName("Wrist Watch");
+		product.setPrice(7999.00);
+		product.setDescription("1 year warrenty");
 		product.setImage(null);
 		product.setProductcategoryfk(2l);
-		product.setManufacturerfk(4l);
+		product.setManufacturerfk(6l);
 		saveUri = this.mockMvc
-				.perform(MockMvcRequestBuilders.post("/save").contentType(MediaType.APPLICATION_JSON)
+				.perform(MockMvcRequestBuilders.post("/save_product").contentType(MediaType.APPLICATION_JSON)
 						.content(new Gson().toJson(product)))
 				.andExpect(MockMvcResultMatchers.status().isCreated()).andReturn().getResponse().getHeader("Location")
 				.toString();
@@ -63,12 +63,12 @@ public class ProductControllerTest {
 		System.out.println("reg " + reg);
 	}
 
-	/* TEST CASE FOR DELETE */
+	 /*TEST CASE FOR DELETE */
 	@Test
 	public void testProductControllerForDelete() throws Exception {
 
 		ResultActions res = this.mockMvc
-				.perform(MockMvcRequestBuilders.delete("/delete_produt/5").contentType(MediaType.APPLICATION_JSON))
+				.perform(MockMvcRequestBuilders.delete("/delete_product/5").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
@@ -83,7 +83,7 @@ public class ProductControllerTest {
 		product.setProductcategoryfk(2l);
 		product.setManufacturerfk(4l);
 		saveUri = this.mockMvc
-				.perform(MockMvcRequestBuilders.patch("/update_produ/3").contentType(MediaType.APPLICATION_JSON)
+				.perform(MockMvcRequestBuilders.patch("/update_product/3").contentType(MediaType.APPLICATION_JSON)
 						.content(new Gson().toJson(product)))
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getHeader("Location")
 				.toString();

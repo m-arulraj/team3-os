@@ -25,7 +25,7 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 
-	@PostMapping("/save")
+	@PostMapping("/save_product")
 	public ResponseEntity<String> save(@RequestBody Product product) throws URISyntaxException {
 		URI uri = new URI("/get_product/" + productService.save(product).getId());
 		HttpHeaders headers = new HttpHeaders();
@@ -39,14 +39,14 @@ public class ProductController {
 	}
 	
 	
-	@DeleteMapping("/delete_produt/{id}")
+	@DeleteMapping("/delete_product/{id}")
 	
 	public ResponseEntity<String> delete(@PathVariable Long id){
 		productService.delete(id);
 		return new ResponseEntity<String>( HttpStatus.OK);
 	}
 	
-	@PatchMapping("/update_produ/{id}")
+	@PatchMapping("/update_product/{id}")
 	public ResponseEntity<String> update(@PathVariable Long id,@RequestBody Product product) throws URISyntaxException{
 	 
 	 URI uri = new URI("/get_product/" + productService.update(id,product).getId());
