@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.easybuy_buyer_service.model.Product;
+import com.example.easybuy_buyer_service.model.Productcategory;
 import com.example.easybuy_buyer_service.services.BuyerService;
 
 @RestController
@@ -40,4 +41,8 @@ public class BuyerController {
 		return buyerService.getProductByPrice(order);
 	}
 	
+	@GetMapping(value="/categories")
+	public List<Productcategory> getCategories(){
+		return buyerService.getAllCategories();
+	}
 }

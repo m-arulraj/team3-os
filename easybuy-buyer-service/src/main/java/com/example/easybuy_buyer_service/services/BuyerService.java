@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.easybuy_buyer_service.model.Product;
+import com.example.easybuy_buyer_service.model.Productcategory;
+import com.example.easybuy_buyer_service.repository.BuyerCategoryRepository;
 import com.example.easybuy_buyer_service.repository.BuyerRepository;
 
 @Service
@@ -13,6 +15,9 @@ public class BuyerService {
 
 	@Autowired
 	BuyerRepository buyerRepository;
+	
+	@Autowired
+	BuyerCategoryRepository buyerCategoryRepository;
 	public Product getProductById(long id){
 		return buyerRepository.getOne(id);
 	}
@@ -33,5 +38,9 @@ public class BuyerService {
 			return buyerRepository.getProductByDescendingPrice();
 		}
 		
+	}
+	
+	public List<Productcategory>getAllCategories(){
+		return buyerCategoryRepository.findAll();
 	}
 }

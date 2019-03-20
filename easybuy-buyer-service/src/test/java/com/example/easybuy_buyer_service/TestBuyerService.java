@@ -76,4 +76,10 @@ public class TestBuyerService {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/Price/"+1))
 		.andExpect(MockMvcResultMatchers.status().isOk());
 	}
+	
+	@Test
+	public void testBuyerControllerProductCategories() throws Exception {
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/categories"))
+		.andExpect(MockMvcResultMatchers.status().isOk());
+	}
 }
