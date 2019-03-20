@@ -1,4 +1,4 @@
-package com.arul.easybuy_seller_service;
+package com.example.easybuy_seller_service;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
