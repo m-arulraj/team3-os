@@ -91,6 +91,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -105,6 +106,15 @@
 
 	</dependencies>
 
+=======
+
+	</dependencies>
+
+
+		
+	
+	
+>>>>>>> e9db40f24c83e6a43d6f829015bbac96304352df
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -116,4 +126,9 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e9db40f24c83e6a43d6f829015bbac96304352df
 </project>

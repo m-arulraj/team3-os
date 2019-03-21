@@ -20,33 +20,33 @@ import com.example.easybuy_seller_service.domain.Product;
 import com.example.easybuy_seller_service.service.ProductService;
 
 @Controller
-public class ProductController {
+public class ProductResource {
 
 	@Autowired
 	ProductService productService;
 	
-	@PostMapping("/save_product")
+	@PostMapping("/api/seller/save_product")
 	public ResponseEntity<String> save(@RequestBody Product product) throws URISyntaxException{
-		URI uri=new URI("/get_product/"+productService.save(product).getId());
+		URI uri=new URI("/api/seller/get_product/"+productService.save(product).getId());
 		HttpHeaders headers=new HttpHeaders();
 		headers.setLocation(uri);
 		return new ResponseEntity<String>(headers,HttpStatus.CREATED);
 	}
 
-	@GetMapping("/get_product/{id}")
+	@GetMapping("/ap1/seller/get_product/{id}")
 	public Optional<Product> get(@PathVariable Long id){
 		return productService.get(id);
 	}
 	
-	@PatchMapping("/update_product/{id}")
+	@PatchMapping("/api/seller/update_product/{id}")
 	public ResponseEntity<String> update(@PathVariable Long id,@RequestBody Product product) throws URISyntaxException{
-		URI uri=new URI("/get_product/"+productService.update(id,product).getId());
+		URI uri=new URI("/api/seller/get_product/"+productService.update(id,product).getId());
 		HttpHeaders headers=new HttpHeaders();
 		headers.setLocation(uri);
 		return new ResponseEntity<String>(headers,HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/delete_product/{id}")
+	@DeleteMapping("/api/seller/delete_product/{id}")
 	public ResponseEntity<String>delete(@PathVariable Long id){
 		productService.delete(id);
 		
