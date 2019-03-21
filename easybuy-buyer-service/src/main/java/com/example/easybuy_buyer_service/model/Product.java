@@ -22,6 +22,7 @@ public class Product {
 	String name;
 	double price;
 	String description;
+	
 	long manufacturerfk;
 	
 	@ManyToOne(cascade={CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})
