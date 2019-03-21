@@ -13,12 +13,9 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.example.easybuy_buyer_service.controller.BuyerController;
+import com.example.easybuy_buyer_service.controller.BuyerResource;
 import com.example.easybuy_buyer_service.model.Product;
 
-/**
- * Unit test for simple App.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
 public class TestBuyerService {
@@ -29,7 +26,7 @@ public class TestBuyerService {
 	WebApplicationContext webAppContect;
 
 	@InjectMocks
-	BuyerController buyerController;
+	BuyerResource buyerResource;
 
 	@Before
 	public void setup() {
@@ -53,28 +50,28 @@ public class TestBuyerService {
 
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products"))
 				.andExpect(MockMvcResultMatchers.status().isOk());
-		String getResponse = this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products")).andReturn()
-				.getResponse().getContentAsString();
+		String getResponse = this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products")).andReturn().getResponse()
+				.getContentAsString();
 		System.out.println(getResponse);
 
 	}
-	
+
 	@Test
 	public void testBuyerControllerProductByCategory() throws Exception {
-		String category="Electronix";
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/"+category))
-		.andExpect(MockMvcResultMatchers.status().isOk());
-		
-		String getResponse = this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/"+category)).andReturn()
-				.getResponse().getContentAsString();
+		String category = "Electronix";
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/" + category))
+				.andExpect(MockMvcResultMatchers.status().isOk());
+
+		String getResponse = this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/" + category))
+				.andReturn().getResponse().getContentAsString();
 		System.out.println(" *************Filtered**********");
 		System.out.println(getResponse);
 	}
-	
+
 	@Test
 	public void testBuyerControllerProductByAscendingPrice() throws Exception {
-		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/Price/"+1))
-		.andExpect(MockMvcResultMatchers.status().isOk());
+		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/filtered/Price/" + 1))
+				.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 	
 	@Test

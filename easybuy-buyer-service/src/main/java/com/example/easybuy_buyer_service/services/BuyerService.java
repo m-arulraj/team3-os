@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.easybuy_buyer_service.model.Product;
-import com.example.easybuy_buyer_service.model.Productcategory;
+import com.example.easybuy_buyer_service.model.ProductCategory;
 import com.example.easybuy_buyer_service.repository.BuyerCategoryRepository;
 import com.example.easybuy_buyer_service.repository.BuyerRepository;
 
@@ -40,7 +40,7 @@ public class BuyerService {
 		
 	}
 	
-	public List<Productcategory>getAllCategories(){
+	public List<ProductCategory>getAllCategories(){
 		return buyerCategoryRepository.findAll();
 	}
 }
