@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.easybuy_buyer_service.model.Product;
-import com.example.easybuy_buyer_service.model.Productcategory;
+import com.example.easybuy_buyer_service.model.ProductCategory;
 import com.example.easybuy_buyer_service.services.BuyerService;
 
 @RestController
 @RequestMapping(value="/api/products")
-public class BuyerController {
+public class BuyerResource {
 
 	@Autowired
 	BuyerService buyerService;
@@ -42,7 +42,7 @@ public class BuyerController {
 	}
 	
 	@GetMapping(value="/categories")
-	public List<Productcategory> getCategories(){
+	public List<ProductCategory> getCategories(){
 		return buyerService.getAllCategories();
 	}
 }

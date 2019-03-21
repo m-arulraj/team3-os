@@ -74,17 +74,13 @@
 			<version>1.9.9</version>
 			<scope>runtime</scope>
 		</dependency>
-<<<<<<< HEAD
 
 	</dependencies>
 
 
-=======
 		
-	</dependencies>
 	
 	
->>>>>>> 478b2d785553df493ce2b441ba68bdf06d93d7ad
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -94,9 +90,6 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-<<<<<<< HEAD
 
-=======
-		
->>>>>>> 478b2d785553df493ce2b441ba68bdf06d93d7ad
+
 </project>

@@ -8,7 +8,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Productcategory {
+public class ProductCategory {
 
 	@Id
 	@GeneratedValue

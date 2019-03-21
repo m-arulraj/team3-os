@@ -38,7 +38,7 @@ public class ProductResourceTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContect).build();
 	}
 
-	/*@Test
+	@Test
 	public void testProductResource() throws Exception {
 		Product product = new Product();
 		product.setName("34 inches LEDTV");
@@ -58,9 +58,9 @@ public class ProductResourceTest {
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
 		System.out.println("reg " + reg);
 
-	}*/
+	}
 
-	/*@Test
+	@Test
 	public void testProductControllerForDelete() throws UnsupportedEncodingException, Exception {
 		ResultActions reg;
 		reg = this.mockMvc
@@ -68,7 +68,7 @@ public class ProductResourceTest {
 				.andExpect(MockMvcResultMatchers.status().isOk());
 		System.out.println("reg " + reg);
 	}
-*/
+
 	@Test
 	public void testProductControllerForUpdate() throws Exception {
 		Product product = new Product();
