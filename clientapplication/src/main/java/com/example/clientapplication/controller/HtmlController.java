@@ -17,7 +17,7 @@ public class HtmlController {
 
 	@GetMapping(value="/home")
 	public String getHomePage(){
-		System.out.println("home controller");
+		System.out.println("home controller in client ");
 		return "home";
 	}
 	

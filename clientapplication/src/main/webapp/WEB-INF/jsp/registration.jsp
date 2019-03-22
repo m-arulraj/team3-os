@@ -116,6 +116,15 @@ padding-right:100px;
 .form-text{
 color:aliceblue;
 }
+
+.right-image-container{
+width:50%;
+}
+img {
+    width: 100%; /* or any custom size */
+/*     height: 100%; */ 
+    object-fit: contain;
+}
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
@@ -130,8 +139,10 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 	<h1 class="logo-head" style="color:red;margin:0">EasyBuy</h1>
   </div>
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
-  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>
+
   <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+    <div class="right-img-container" ><img class="right-img" src="/images/couple.jpg"></div> 
 </nav>
 
 <!-- Top menu on small screens -->
