@@ -104,10 +104,12 @@ padding-left:4%
 }
 .logo-box{
  width:200px;
+ 
 }
 .logo{
 width:inherit;
 padding-right:100px;
+
 }
 .logo-head{
    font-family: 'Sofia';
@@ -117,13 +119,11 @@ padding-right:100px;
 color:aliceblue;
 }
 
-.right-image-container{
-width:50%;
-}
+
 img {
     width: 100%; /* or any custom size */
-/*     height: 100%; */ 
-    object-fit: contain;
+     height: 100%; 
+  /*   object-fit: contain; */
 }
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
@@ -132,17 +132,17 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
 <div class="w3-content" style="max-width:1250px">
 <!-- Sidebar/menu -->
-<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px;background-color:#fde40aa6!important" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <div class="logo-box"><img class="logo" src="/images/eas.jpg"></div>
+    <div class="logo-box"><img class="logo" src="/images/eas.png"></div>
 	<h1 class="logo-head" style="color:red;margin:0">EasyBuy</h1>
   </div>
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a>
 
   <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
-    <div class="right-img-container" ><img class="right-img" src="/images/couple.jpg"></div> 
+    <div style="height:490px" ><img class="right-img" src="/images/couple.jpg"></div> 
 </nav>
 
 <!-- Top menu on small screens -->
