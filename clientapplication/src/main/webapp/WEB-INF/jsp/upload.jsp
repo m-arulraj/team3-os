@@ -7,6 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome
+<h1>Spring Boot file upload example</h1>
+
+<form method="POST" action="/uploadFile" enctype="multipart/form-data">
+    <input type="file" name="file" /><br/><br/>
+    <input type="text" name="text" /><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
 </body>
 </html>
