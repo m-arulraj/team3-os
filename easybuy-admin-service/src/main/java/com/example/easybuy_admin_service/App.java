@@ -1,9 +1,6 @@
 package com.example.easybuy_admin_service;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
     public static void main( String[] args )
