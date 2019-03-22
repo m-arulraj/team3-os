@@ -4,17 +4,19 @@ package com.example.easybuy_buyer_service.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.easybuy_buyer_service.model.Product;
-import com.example.easybuy_buyer_service.model.ProductCategory;
+import com.example.easybuy_buyer_service.model.Productcategory;
 import com.example.easybuy_buyer_service.services.BuyerService;
 
 @RestController
 @RequestMapping(value="/api/products")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BuyerResource {
 
 	@Autowired
@@ -44,7 +46,12 @@ public class BuyerResource {
 	}
 	
 	@GetMapping(value="/categories")
-	public List<ProductCategory> getCategories(){
+	public List<Productcategory> getCategories(){
 		return buyerService.getAllCategories();
 	}
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 520e53cedd0ad6135f041d456a0db7d2cd3ebe9c
