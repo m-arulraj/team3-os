@@ -23,9 +23,9 @@ public class HtmlController {
 
 	@GetMapping(value="/home")
 	public String getHomePage(){
-		/*System.out.println("home controller");
-		return "home";*/
-		clientService.getAllProduct();
+		System.out.println("home controller");
+		return "home";
+	//	clientService.getAllProduct();
 	}
 	
 	@GetMapping(value="/registration")
@@ -73,5 +73,6 @@ public class HtmlController {
     return "home";
 }
 }
+
 
 

@@ -82,3 +82,4 @@ function getRandom(){
 loadProducts();
 loadCategory();
 getRandom();
+console.log("calling client app home js");
