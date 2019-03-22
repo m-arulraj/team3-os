@@ -21,6 +21,7 @@ public class BuyerResource {
 
 	@Autowired
 	BuyerService buyerService;
+	
 	@GetMapping(value="/{id}")
 	public Product getProductById(@PathVariable("id") long id){
 	    System.out.println("in /products/"+id+" mapping");
@@ -48,5 +49,9 @@ public class BuyerResource {
 	public List<Productcategory> getCategories(){
 		return buyerService.getAllCategories();
 	}
+<<<<<<< HEAD
+}
+=======
 }
 
+>>>>>>> 520e53cedd0ad6135f041d456a0db7d2cd3ebe9c

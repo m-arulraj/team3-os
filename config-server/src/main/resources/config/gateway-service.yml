@@ -13,17 +13,10 @@ spring:
         locator:
           enabled: true
       routes:
-      - id: utility-service
-        uri: lb://utility-service
-        predicates:
-        - Path=/register/**
-        
-        - id: buyer-service
-        uri: lb://buyer-service
-        predicates:
-        - Path=/api/products/**
-        
-        - id: client-service
-        uri: lb://seller-service
-        predicates:
-        - Path=/save_product/**
+        - id: buyer-service 
+          uri: lb://buyer-service
+          predicates:
+          - Path=/api/products/**
+          filters:
+          - RewritePath=/api/products/(?<path>.*), /$\{path}
+          
