@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,13 +13,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.clientapplication.service.ClientService;
+
 @Controller
 public class HtmlController {
+	
+	@Autowired
+	ClientService clientService;
 
 	@GetMapping(value="/home")
 	public String getHomePage(){
-		System.out.println("home controller");
-		return "home";
+		/*System.out.println("home controller");
+		return "home";*/
+		clientService.getAllProduct();
 	}
 	
 	@GetMapping(value="/registration")

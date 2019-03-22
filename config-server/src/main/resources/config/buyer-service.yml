@@ -18,17 +18,3 @@ spring:
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048
         useServerPrepStmts: true
-
-    jpa:
-        database-platform: org.hibernate.dialect.MySQL5Dialect
-        database: MYSQL
-        openInView: false
-        show_sql: true
-        generate-ddl: false
-        hibernate:
-            ddl-auto: update
-            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
-        properties:
-            hibernate.cache.use_second_level_cache: false
-            hibernate.cache.use_query_cache: false
-            hibernate.generate_statistics: false
