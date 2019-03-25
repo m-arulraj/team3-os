@@ -39,62 +39,55 @@ public class AdminResourceTest {
 
 	@Test
 	public void testAdminController() throws UnsupportedEncodingException, Exception {
-		String reg;
-		reg = this.mockMvc
+		  this.mockMvc
 				.perform(MockMvcRequestBuilders.get("/api/admin/get_complaint_by_id/8")
 						.contentType(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
-
+				.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
 	@Test
 	public void testAdminControllerByProductId() throws UnsupportedEncodingException, Exception {
-		MvcResult reg;
-		reg = this.mockMvc
+		 this.mockMvc
 				.perform(MockMvcRequestBuilders.get("/api/admin/get_complaint_by_product_id/6")
 						.contentType(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn();
-		System.out.println("reg " + reg);
+				.andExpect(MockMvcResultMatchers.status().isOk());
+
 
 	}
 
 	@Test
 	public void testProductControllerForDelete() throws UnsupportedEncodingException, Exception {
-		ResultActions reg;
-		reg = this.mockMvc
+	 this.mockMvc
 				.perform(MockMvcRequestBuilders.delete("/api/admin/delete_complaint_by_id/2").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk());
-		System.out.println("reg " + reg);
+	
 	}
 	
 	@Test
 	public void testAdminControllerForGetReview() throws UnsupportedEncodingException, Exception {
-		String reg;
-		reg = this.mockMvc
+	this.mockMvc
 				.perform(MockMvcRequestBuilders.get("/api/admin/get_review_by_id/3")
 						.contentType(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
+				.andExpect(MockMvcResultMatchers.status().isOk());
 
 	}
 	
 	@Test
 	public void testAdminControllerForGetReviewByProductId() throws UnsupportedEncodingException, Exception {
-		String reg;
-		reg = this.mockMvc
+	 this.mockMvc
 				.perform(MockMvcRequestBuilders.get("/api/admin/get_review_by_product_id/8")
 						.contentType(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
+				.andExpect(MockMvcResultMatchers.status().isOk());
 
 		
 	}
 	
 	@Test
 	public void testProductControllerForDeleteReview() throws UnsupportedEncodingException, Exception {
-		ResultActions reg;
-		reg = this.mockMvc
+		 this.mockMvc
 				.perform(MockMvcRequestBuilders.delete("/api/admin/delete_review_by_id/2").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk());
-		System.out.println("reg " + reg);
+	
 	}
 	
 	
