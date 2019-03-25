@@ -7,12 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.easybuy_buyer_service.model.Cart;
 import com.example.easybuy_buyer_service.model.Product;
 import com.example.easybuy_buyer_service.model.Productcategory;
 import com.example.easybuy_buyer_service.services.BuyerService;
+import com.example.easybuy_buyer_service.services.CartService;
 
 @RestController
 @RequestMapping(value="/api/products")
@@ -21,6 +25,8 @@ public class BuyerResource {
 
 	@Autowired
 	BuyerService buyerService;
+	@Autowired
+	CartService cartService;
 	
 	@GetMapping(value="/{id}")
 	public Product getProductById(@PathVariable("id") long id){
@@ -48,6 +54,11 @@ public class BuyerResource {
 	@GetMapping(value="/categories")
 	public List<Productcategory> getCategories(){
 		return buyerService.getAllCategories();
+	}
+	
+	@PostMapping("/add_to_cart")
+	public void addToCart(@RequestBody Cart cart){
+		cartService.saveCart(cart);
 	}
 }
 
