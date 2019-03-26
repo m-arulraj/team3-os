@@ -16,7 +16,6 @@ spring:
         - id: buyer-service 
           uri: lb://buyer-service
           predicates:
-          - Path=/api/products/**
-          filters:
-          - RewritePath=/api/products/(?<path>.*), /$\{path}
+          - Path=/api/products/**,/api/products/categories/**,/api/products/add_to_cart/**,/api/products/{id}/**
+ 
           

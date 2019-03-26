@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Cart {
+public class SaveProduct {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
