@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.arul</groupId>
-	<artifactId>ins-gateway-server</artifactId>
+	<artifactId>gateway-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>ins-gateway-server</name>
+	<name>gateway-server</name>
 	<url>http://maven.apache.org</url>
 
 	<parent>

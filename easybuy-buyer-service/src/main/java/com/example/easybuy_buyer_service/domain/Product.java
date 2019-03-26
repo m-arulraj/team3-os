@@ -1,4 +1,4 @@
-package com.example.easybuy_buyer_service.model;
+package com.example.easybuy_buyer_service.domain;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

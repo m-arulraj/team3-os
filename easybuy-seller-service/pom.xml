@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>easybuy-utility-service</artifactId>
+	<artifactId>easybuy-seller-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>easybuy-utility-service</name>
+	<name>easybuy-seller-service</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -91,7 +91,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
@@ -106,15 +105,7 @@
 
 	</dependencies>
 
-=======
 
-	</dependencies>
-
-
-		
-	
-	
->>>>>>> e9db40f24c83e6a43d6f829015bbac96304352df
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -126,9 +117,4 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> e9db40f24c83e6a43d6f829015bbac96304352df
 </project>

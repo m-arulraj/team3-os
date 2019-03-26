@@ -1,4 +1,4 @@
-package com.example.easybuy_buyer_service.model;
+package com.example.easybuy_buyer_service.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +9,14 @@ import lombok.Data;
 
 @Data
 @Entity
-public class SaveProduct {
+public class OrderDetails {
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	Long id;
-
+	String status;
+	String date;
 	Long customerfk;
 	Long productfk;
+	
 }

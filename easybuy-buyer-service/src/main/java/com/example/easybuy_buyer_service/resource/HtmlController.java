@@ -1,4 +1,4 @@
-package com.example.easybuy_buyer_service.controller;
+package com.example.easybuy_buyer_service.resource;
 
 import java.io.IOException;
 import java.nio.file.Files;

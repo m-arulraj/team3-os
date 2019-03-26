@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.example.easybuy_buyer_service.model.Product;
+import com.example.easybuy_buyer_service.domain.Product;
 
 @Repository
 public interface BuyerRepository extends JpaRepository<Product, Long> {

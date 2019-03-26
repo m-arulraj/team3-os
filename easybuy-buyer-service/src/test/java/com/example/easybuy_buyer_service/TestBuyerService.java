@@ -13,7 +13,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.example.easybuy_buyer_service.controller.BuyerResource;
+import com.example.easybuy_buyer_service.resource.BuyerResource;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest

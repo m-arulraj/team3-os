@@ -1,5 +1,5 @@
 
-package com.example.easybuy_buyer_service.controller;
+package com.example.easybuy_buyer_service.resource;
 
 import java.util.List;
 
@@ -14,11 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.easybuy_buyer_service.model.Cart;
-import com.example.easybuy_buyer_service.model.Product;
-import com.example.easybuy_buyer_service.model.Productcategory;
+import com.example.easybuy_buyer_service.domain.Cart;
+import com.example.easybuy_buyer_service.domain.OrderDetails;
+import com.example.easybuy_buyer_service.domain.Product;
+import com.example.easybuy_buyer_service.domain.Productcategory;
 import com.example.easybuy_buyer_service.services.BuyerService;
 import com.example.easybuy_buyer_service.services.CartService;
+import com.example.easybuy_buyer_service.services.OrderDetailsService;
 import com.example.easybuy_buyer_service.services.SaveProductService;
 
 @RestController
@@ -34,6 +36,9 @@ public class BuyerResource {
 	
 	@Autowired
 	SaveProductService saveProductService;
+	
+	@Autowired
+	OrderDetailsService orderDetailsService;
 	
 	
 	@GetMapping(value="/{id}")
@@ -77,10 +82,10 @@ public class BuyerResource {
 		saveProductService.saveProduct(cart);
 	}
 	
-	/*@PostMapping("/place_order")
+	@PostMapping("/place_order")
 	public void placeOrder(@RequestBody OrderDetails orderDetails){
 		orderDetailsService.placeOrder(orderDetails);
-	}*/
+	}
 	
 }
 
