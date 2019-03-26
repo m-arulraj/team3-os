@@ -10,7 +10,7 @@ function loadProducts() {
 	 setProducts(allProduct);
     }
   };
-  xhttp.open("GET", "http://127.25.229.35:8091/api/products", true);
+  xhttp.open("GET", "http://localhost:8072/api/products", true);
   xhttp.send();
 };
 
