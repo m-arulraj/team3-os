@@ -14,7 +14,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.example.easybuy_buyer_service.controller.BuyerResource;
-import com.example.easybuy_buyer_service.model.Product;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest

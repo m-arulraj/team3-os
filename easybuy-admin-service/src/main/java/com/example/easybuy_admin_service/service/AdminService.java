@@ -18,6 +18,7 @@ public class AdminService {
 
 	@Autowired
 	ReviewRepository reviewRepository;
+	
 
 	public Complaint getByCompalintId(Long id) {
 		return complaintRepository.getOne(id);
@@ -43,5 +44,11 @@ public class AdminService {
 	public void deleteByReviewId(Long id) {
 
 		reviewRepository.deleteById(id);
+	}
+
+	public void updateStatus(Long id,String status) {
+		
+		
+		
 	}
 }
