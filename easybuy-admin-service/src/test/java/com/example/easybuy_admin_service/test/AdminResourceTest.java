@@ -1,7 +1,5 @@
 package com.example.easybuy_admin_service.test;
 
-import java.io.UnsupportedEncodingException;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,14 +9,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 import com.example.easybuy_admin_service.controller.AdminResource;
+import com.google.gson.Gson;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -37,7 +34,7 @@ public class AdminResourceTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContect).build();
 	}
 
-	@Test
+	/*@Test
 	public void testAdminController() throws UnsupportedEncodingException, Exception {
 		  this.mockMvc
 				.perform(MockMvcRequestBuilders.get("/api/admin/get_complaint_by_id/8")
@@ -85,10 +82,19 @@ public class AdminResourceTest {
 	@Test
 	public void testProductControllerForDeleteReview() throws UnsupportedEncodingException, Exception {
 		 this.mockMvc
-				.perform(MockMvcRequestBuilders.delete("/api/admin/delete_review_by_id/2").contentType(MediaType.APPLICATION_JSON))
+				.perform(MockMvcRequestBuilders.delete("/api/admin/delete_review_by_id/2")
+						.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk());
 	
 	}
-	
+	*/
+	@Test
+	public void testAdminControllerForUpdatingStatus() throws Exception{
+		
+		this.mockMvc.perform(MockMvcRequestBuilders.post("/api/admin/updating_activation_status/3/approved")
+				.contentType(MediaType.APPLICATION_JSON));
+				
+		
+	}
 	
 }
