@@ -76,6 +76,10 @@ public class AdminResourceTest {
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
 
 	}
+<<<<<<< HEAD
+=======
+	
+>>>>>>> c6277723ed01047421613d9066256cd2c306dffa
 	@Test
 	public void testAdminControllerForGetReviewByProductId() throws UnsupportedEncodingException, Exception {
 		String reg;

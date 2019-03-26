@@ -1,3 +1,4 @@
+sessionStorage.setItem("cartQuantity", 0);
 var allProduct;
 var categories;
 var filteredProducts;
@@ -10,7 +11,7 @@ function loadProducts() {
 	 setProducts(allProduct);
     }
   };
-  xhttp.open("GET", "http://127.25.229.35:8091/api/products", true);
+  xhttp.open("GET", "http://172.25.229.35:8072/api/products", true);
   xhttp.send();
 };
 
@@ -22,7 +23,7 @@ var xhttp = new XMLHttpRequest();
 	 setCategories(categories);
     }
   };
-  xhttp.open("GET", "http://127.25.229.35:8091/api/products/categories", true);
+  xhttp.open("GET", "http://172.25.229.35:8072/api/products/categories", true);
   xhttp.send();
 }
 
@@ -37,7 +38,7 @@ function setProducts(products){
 	element.classList.add('img-wrapper');
 	/*element.classList.add('l3');
 	element.classList.add('s6');*/
-	element.innerHTML='<div class="my-img-container" >'+
+	element.innerHTML='<div class="my-img-container" onclick="getDetails('+products[i].id+')">'+
 					  '<img src="/images/'+images[getRandom()]+'" height="100%" width="auto">'+
 					  '<p class="product-text">'+products[i].name+'<br><b>Rs.'+products[i].price+'</b></p>'
 					  +'</div>';
@@ -56,7 +57,7 @@ function setCategories(categories){
 }
 
 function categoryClickEvent(categoryName){
-	var urlStrings="http://127.25.229.35:8091/api/products/filtered/"+categoryName; ;
+	var urlStrings="http://172.25.229.35:8072/api/products/filtered/"+categoryName; ;
 	if(categoryName!=null){
 		
 		 var xhttp = new XMLHttpRequest();
@@ -78,6 +79,10 @@ function categoryClickEvent(categoryName){
 function getRandom(){
 	var x=Math.floor(Math.random()*images.length);
     return x;
+}
+
+function getDetails(id){
+	window.location="http://127.25.229.35:8090/product/details?id="+id;
 }
 loadProducts();
 loadCategory();

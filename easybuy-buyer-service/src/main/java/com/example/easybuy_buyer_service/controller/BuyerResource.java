@@ -49,9 +49,5 @@ public class BuyerResource {
 	public List<Productcategory> getCategories(){
 		return buyerService.getAllCategories();
 	}
-<<<<<<< HEAD
-}
-=======
 }
 
->>>>>>> 520e53cedd0ad6135f041d456a0db7d2cd3ebe9c

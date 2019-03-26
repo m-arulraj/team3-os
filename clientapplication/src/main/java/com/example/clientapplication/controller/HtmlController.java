@@ -1,27 +1,26 @@
-package com.example.clientapplication.controller;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+package com.example.clientapplication.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.clientapplication.domain.Cart;
 import com.example.clientapplication.service.ClientService;
 
+
 @Controller
+@CrossOrigin(origins="*",allowedHeaders="*")
 public class HtmlController {
 	
 	@Autowired
 	ClientService clientService;
 
-	@GetMapping(value="/home")
+	@GetMapping(value="/")
 	public String getHomePage(){
 		System.out.println("home controller");
 		return "home";
@@ -46,32 +45,26 @@ public class HtmlController {
 		return "upload";
 	}
 	
-	 @PostMapping("/uploadFile") 
-	    public String singleFileUpload(@RequestParam("file") MultipartFile file,@RequestParam("text") String text,
-	                                   RedirectAttributes redirectAttributes) {
-		 
-		 System.out.println(text);
-		 String UPLOADED_FOLDER = "C://Users//koustuvmu//";
-	if (file.isEmpty()) {
-        return "upload?again=true";
-    }
-
-    try {
-
-        // Get the file and save it somewhere
-        byte[] bytes = file.getBytes();
-        Path path = Paths.get(UPLOADED_FOLDER + file.getOriginalFilename());
-        Files.write(path, bytes);
-
-   /*     redirectAttributes.addFlashAttribute("message",
-                "You successfully uploaded '" + file.getOriginalFilename() + "'");*/
-
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-
-    return "home";
-}
+	@GetMapping(value="/product/details")
+	public String getDetailedPage(@RequestParam("id") long id){
+		System.out.println("details");		
+		return "productDetails";
+		
+	}
+	@GetMapping(value="/cart")
+	public String getCartPage(){	
+		return "userCart";
+		
+	}
+	
+	/*@PostMapping(value="/add_to_cart")
+	public String addToCart(@RequestBody Cart cart){
+		System.out.println(cart.getCustomerfk()+cart.getProductfk());
+	    String reponseString=clientService.addToCart(cart);	
+		return "productDetails";
+		
+	}*/
+	
 }
 
 

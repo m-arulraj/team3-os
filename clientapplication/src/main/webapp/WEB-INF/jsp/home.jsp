@@ -51,6 +51,11 @@ margin-top:50px;
 .right-image-container{
 width:50%;
 }
+.log-back{
+background-image:url('/images/log-back.png');
+    background-repeat: no-repeat;
+    background-position: bottom
+    }
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
@@ -61,7 +66,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <div class="logo-box"><img class="logo" src="/images/eas.jpg"></div>
+    <div class="logo-box"><img class="logo" src="/images/log.png"></div>
 	<h1 class="logo-head" style="">EasyBuy</h1>
   </div>
   <div class=" w3-large w3-text-grey" style="font-weight:bold">
@@ -77,6 +82,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
   <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+  <a href="/registration"  class="w3-bar-item w3-button w3-padding">Sign Up</a>
   <div class="right-img-container" ><img class="right-img" src="/images/Lenovo-laptop.png"></div>
 </nav>
 
@@ -96,8 +102,9 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Top header -->
-  <header class="w3-container w3-xlarge" style="background-image:url('online.jpg')">
-    <p class="w3-left logo-head">Easy Buy</p>
+  <header class="w3-container w3-xlarge log-back" >
+    <p class="w3-left logo-head" style="display:inline-block;">Easy Buy</p>
+    <span style="display:inline-block;padding-left: 50%; color:red">Welcome to Easy Buy</span>
     <p class="w3-right">
       <i class="fa fa-shopping-cart w3-margin-right"></i>
       <i class="fa fa-search"></i>

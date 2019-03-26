@@ -6,7 +6,8 @@ public class WebMvcApplicationInitializer extends AbstractAnnotationConfigDispat
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[]{WebSecurityConfig.class};
+		return new Class[]{WebMvcApplicationInitializer.class};
+	
 	}
 
 	@Override

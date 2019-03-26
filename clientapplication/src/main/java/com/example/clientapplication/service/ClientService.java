@@ -1,29 +1,26 @@
 package com.example.clientapplication.service;
 
-import java.util.List;
-
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.example.clientapplication.domain.Product;
-import com.example.clientapplication.util.EndpointConstant;
-
+import com.example.clientapplication.domain.Cart;
+import com.example.clientapplication.domain.OrderDetails;
 
 @Service
 public class ClientService {
-	
-	RestTemplate template=new RestTemplate();
-	
-	public List<Product> getAllProduct(){
-		System.out.println("start");
-		ResponseEntity<List<Product>> response = template.exchange(EndpointConstant.BUYER_SERVICE_URI,
-				HttpMethod.GET, null, new ParameterizedTypeReference<List<Product>>() {
-				});
-		System.out.println("end");
-		return response.getBody();
-	}
 
+	RestTemplate template=new RestTemplate();
+	public String addToCart(Cart cart){
+		/*template.exchange("172.25.229.35:8072/api/products/add_to_cart", RequestMethod.POST,cart,new ParameterizedTypeReference<Cart>() {
+		});*/
+		//template.exchange("172.25.229.35:8072/api/products/add_to_cart", RequestMethod.POST, cart, Long.class);
+		String responseString=template.postForObject("http://172.25.229.35:8072/api/products/add_to_cart", cart,String.class);
+		return responseString;
+	}
+	
+	public String placeOrder(OrderDetails orderDetails){
+		System.out.println(orderDetails.getDate());
+		String responseString=template.postForObject("http://172.25.229.35:8072/api/products/place_order", orderDetails,String.class);
+		return responseString;
+	}
 }
