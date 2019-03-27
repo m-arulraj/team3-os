@@ -14,11 +14,18 @@ public class UtilityService {
 	@Autowired
 	UtilityRepository utilityRepository;
 	
-	public Registration register(Registration registration){
+	public Registration registerUser(Registration registration){
 		return utilityRepository.save(registration);
 	}
 
-	public Optional<Registration> get(Long id){
+	public Optional<Registration> getRegisteredUserById(Long id){
 		return utilityRepository.findById(id);
+	}
+
+	public Registration updateUserStatus(Long id,String status) {
+		Registration registeredUser=null;
+		registeredUser=utilityRepository.findById(id).get();
+		registeredUser.setStatus(status);
+		return utilityRepository.save(registeredUser);
 	}
 }

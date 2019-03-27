@@ -1,6 +1,6 @@
 spring:
   application:
-    name: buyer-service
+    name: admin-service
   cloud:
     config:
       uri: http://localhost:8070  

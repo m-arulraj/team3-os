@@ -82,10 +82,14 @@ public class BuyerResource {
 		saveProductService.saveProduct(cart);
 	}
 	
-	@PostMapping("/place_order")
-	public void placeOrder(@RequestBody OrderDetails orderDetails){
+	@RequestMapping(value="/place_order",method={RequestMethod.POST,RequestMethod.OPTIONS})
+	public HttpStatus placeOrder(@RequestBody OrderDetails orderDetails){
+		//System.out.println(orderDetails);
 		orderDetailsService.placeOrder(orderDetails);
+		return HttpStatus.OK;
 	}
+	
+	
 	
 }
 

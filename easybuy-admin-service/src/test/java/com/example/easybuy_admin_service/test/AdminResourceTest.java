@@ -1,5 +1,7 @@
 package com.example.easybuy_admin_service.test;
 
+import java.io.UnsupportedEncodingException;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,8 +16,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.example.easybuy_admin_service.controller.AdminResource;
-import com.google.gson.Gson;
+import com.example.easybuy_admin_service.resource.AdminResource;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -34,7 +35,7 @@ public class AdminResourceTest {
 		this.mockMvc = MockMvcBuilders.webAppContextSetup(webAppContect).build();
 	}
 
-	/*@Test
+	@Test
 	public void testAdminController() throws UnsupportedEncodingException, Exception {
 		  this.mockMvc
 				.perform(MockMvcRequestBuilders.get("/api/admin/get_complaint_by_id/8")
@@ -87,14 +88,17 @@ public class AdminResourceTest {
 				.andExpect(MockMvcResultMatchers.status().isOk());
 	
 	}
-	*/
+	
 	@Test
 	public void testAdminControllerForUpdatingStatus() throws Exception{
 		
-		this.mockMvc.perform(MockMvcRequestBuilders.post("/api/admin/updating_activation_status/3/approved")
-				.contentType(MediaType.APPLICATION_JSON));
+		this.mockMvc.perform(MockMvcRequestBuilders.put("/api/admin/update_activation_status/3/status/approved")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk());
 				
 		
 	}
+	
+	
 	
 }

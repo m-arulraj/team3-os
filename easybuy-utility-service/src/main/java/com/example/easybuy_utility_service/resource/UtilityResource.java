@@ -1,4 +1,4 @@
-package com.example.easybuy_utility_service.controller;
+package com.example.easybuy_utility_service.resource;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -11,28 +11,37 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.easybuy_utility_service.domain.Registration;
 import com.example.easybuy_utility_service.service.UtilityService;
 
 @RestController
-public class UtilityController {
+@RequestMapping(value="/api/utility")
+public class UtilityResource {
 	
 	@Autowired
 	UtilityService utilityService;
 	
-	@PostMapping("/register")
-	public ResponseEntity<String> register(@RequestBody Registration registration) throws URISyntaxException{
-		URI uri=new URI("/get_registred/"+utilityService.register(registration).getId());
+	@PostMapping("/register_user")
+	public ResponseEntity<String> registerUser(@RequestBody Registration registration) throws URISyntaxException{
+		URI uri=new URI("/get_registred/"+utilityService.registerUser(registration).getId());
 		HttpHeaders headers=new HttpHeaders();
 		headers.setLocation(uri);
 		return new ResponseEntity<String>(headers,HttpStatus.CREATED);
 	}
 
 	@GetMapping("/get_registred/{id}")
-	public Optional<Registration> get(@PathVariable Long id){
-		return utilityService.get(id);
+	public Optional<Registration> getRegisteredUserById(@PathVariable Long id){
+		return utilityService.getRegisteredUserById(id);
+	}
+	
+	@PutMapping(value="/update_status/{id}/status/{status}")
+	public Registration updateUserStatus(@PathVariable("id") Long id,@PathVariable("status") String status){
+		return utilityService.updateUserStatus(id,status);
 	}
 }

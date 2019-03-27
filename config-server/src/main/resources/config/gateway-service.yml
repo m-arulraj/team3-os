@@ -17,5 +17,13 @@ spring:
           uri: lb://buyer-service
           predicates:
           - Path=/api/products/**,/api/products/categories/**,/api/products/add_to_cart/**,/api/products/{id}/**
- 
-          
+        - id: utility-service 
+          uri: lb://utility-service
+          predicates:
+          - Path=/proxy/api/utility/**
+          filters:
+          - RewritePath=/proxy/(?<api>.*), /$\{api} 
+        - id: admin-service 
+          uri: lb://admin-service
+          predicates:
+          - Path=/api/admin/**,/api/admin/update_activation_status/{id}/status/{status}/**          
