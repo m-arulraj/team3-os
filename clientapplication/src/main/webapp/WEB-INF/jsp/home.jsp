@@ -82,6 +82,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
   <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+  <a href="/registration"  class="w3-bar-item w3-button w3-padding">Sign Up</a>
   <div class="right-img-container" ><img class="right-img" src="/images/Lenovo-laptop.png"></div>
 </nav>
 
@@ -102,7 +103,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   
   <!-- Top header -->
   <header class="w3-container w3-xlarge log-back" >
-    <p class="w3-left logo-head">Easy Buy</p>
+    <p class="w3-left logo-head" style="display:inline-block;">Easy Buy</p>
+    <span style="display:inline-block;padding-left: 50%; color:red">Welcome to Easy Buy</span>
     <p class="w3-right">
       <i class="fa fa-shopping-cart w3-margin-right"></i>
       <i class="fa fa-search"></i>

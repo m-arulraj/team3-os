@@ -58,8 +58,16 @@ button:hover {
 .cancelbtn, .signupbtn {
   float: left;
   width: 50%;
+  color:white;
+}
+.green-btn{
+ background-color:green;
+ border:unset;
 }
 
+a{
+  text-decoration: none;
+}
 /* Add padding to container elements */
 .container {
   padding: 16px;
@@ -178,7 +186,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
  
     <div class="registration-container">
 <div class="registration-form">
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="#" style="border:1px solid #ccc">
 <div class="form-header">
 <h1 class="sign-up-head">Sign Up</h1>
     <p class="sign-up-text">Please fill in this form to create an account.</p>
@@ -203,8 +211,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Log In</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
+      <a href="/login" type="button" class="cancelbtn">Log In</a>
+      <input type="submit" value="Sign up"  class="cancelbtn green-btn">
     </div>
   </div>
 </form>
