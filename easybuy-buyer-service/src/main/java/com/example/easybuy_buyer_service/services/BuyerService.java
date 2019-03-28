@@ -43,4 +43,5 @@ public class BuyerService {
 	public List<Productcategory>getAllCategories(){
 		return buyerCategoryRepository.findAll();
 	}
+
 }

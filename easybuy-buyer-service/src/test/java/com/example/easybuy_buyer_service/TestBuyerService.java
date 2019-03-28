@@ -78,4 +78,17 @@ public class TestBuyerService {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/categories"))
 		.andExpect(MockMvcResultMatchers.status().isOk());
 	}
+	
+	@Test
+	public void testBuyerControllerForDeletingProductFromCart() throws Exception{
+		this.mockMvc .perform(MockMvcRequestBuilders.delete("/api/products/delete_from_cart/11"))
+		.andExpect(MockMvcResultMatchers.status().isOk());
+	}
+	
+	@Test
+	public void testBuyerControllerForDeletingProductFromSaveProducts() throws Exception{
+		this.mockMvc .perform(MockMvcRequestBuilders.delete("/api/products/delete_from save_product/1"))
+		.andExpect(MockMvcResultMatchers.status().isOk());
+	}
+
 }

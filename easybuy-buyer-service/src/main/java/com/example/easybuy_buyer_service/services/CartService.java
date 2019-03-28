@@ -23,11 +23,17 @@ public class CartService {
 		cartRepository.save(cart);
 	}
 
+<<<<<<< HEAD
 	public List<Product> getAllCartProductsByCustomerId(Long id) {
 		List<Product> products=new ArrayList<Product>();
 		List<Cart> carts = cartRepository.getAllCartProductsByCustomerId(id);
 		carts.forEach(cart->products.add(productRepository.getOne(cart.getProductfk())));
 		return products;
+=======
+	public void deleteFromCart(Long id) {
+		
+		cartRepository.deleteById(id);
+>>>>>>> a85aa0bbdd4609365ec2d5b7bf8bbbbb0c6a576b
 	}
 
 }
