@@ -46,9 +46,23 @@ public class AdminService {
 		reviewRepository.deleteById(id);
 	}
 
-	public void updateStatus(Long id,String status) {
+	
+
+	public Complaint addComplaint(Complaint complaint) {
 		
-		
-		
+		return complaintRepository.save(complaint);
 	}
+
+	public Review addReview(Review review) {
+
+		return reviewRepository.save(review);
+	}
+
+	public void updateReview(Long id, int rating) {
+		Review revi=reviewRepository.findById(id).get();
+		revi.setRattings(rating);
+		reviewRepository.save(revi);
+	}
+
+	
 }

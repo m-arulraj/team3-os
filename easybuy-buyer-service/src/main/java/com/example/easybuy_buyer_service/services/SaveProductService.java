@@ -15,4 +15,9 @@ public class SaveProductService {
 	public void saveProduct(Cart cart){
 		saveProductRepository.save(cart);
 	}
+
+	public void deleteById(Long id) {
+		
+		saveProductRepository.deleteById(id);
+	}
 }
