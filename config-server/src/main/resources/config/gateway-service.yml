@@ -20,7 +20,7 @@ spring:
         - id: utility-service 
           uri: lb://utility-service
           predicates:
-          - Path=/proxy/api/utility/**,/proxy/api/utility/save_user/**
+          - Path=/proxy/api/utility/**
           filters:
           - RewritePath=/proxy/(?<api>.*), /$\{api} 
         - id: admin-service 
