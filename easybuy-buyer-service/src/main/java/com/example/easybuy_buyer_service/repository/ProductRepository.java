@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.example.easybuy_buyer_service.domain.Product;
 
 @Repository
-public interface BuyerRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
 	@Query("select p from Product as p where p.productcategoryfk.name=:category")
 	List<Product> getProductByCategory(@Param("category")String category);

@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import com.example.easybuy_buyer_service.domain.Product;
 import com.example.easybuy_buyer_service.domain.Productcategory;
 import com.example.easybuy_buyer_service.repository.BuyerCategoryRepository;
-import com.example.easybuy_buyer_service.repository.BuyerRepository;
+import com.example.easybuy_buyer_service.repository.ProductRepository;
 
 @Service
 public class BuyerService {
 
 	@Autowired
-	BuyerRepository buyerRepository;
+	ProductRepository buyerRepository;
 	
 	@Autowired
 	BuyerCategoryRepository buyerCategoryRepository;

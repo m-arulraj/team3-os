@@ -89,7 +89,10 @@ public class BuyerResource {
 		return HttpStatus.OK;
 	}
 	
-	
+	@GetMapping("/cart/customer/{id}")
+	public List<Product> getAllCartProductsByCustomerId(@PathVariable Long id){
+		return cartService.getAllCartProductsByCustomerId(id);
+	}
 	
 }
 

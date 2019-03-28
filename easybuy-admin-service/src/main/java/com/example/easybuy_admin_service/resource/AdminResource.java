@@ -59,8 +59,6 @@ public class AdminResource {
 	
 	@PutMapping("/update_activation_status/{id}/status/{status}")
 	public void updateTheStatus(@PathVariable("id") Long id,@PathVariable("status") String status){
-		System.out.println(status);
-		//adminService.updateStatus(id,status);
 		utilityServiceProxy.updateUserStatus(id, status);
 	}
 	
