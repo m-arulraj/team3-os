@@ -13,8 +13,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.example.easybuy_buyer_service.controller.BuyerResource;
-import com.example.easybuy_buyer_service.model.Product;
+import com.example.easybuy_buyer_service.resource.BuyerResource;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
@@ -79,4 +78,17 @@ public class TestBuyerService {
 		this.mockMvc.perform(MockMvcRequestBuilders.get("/api/products/categories"))
 		.andExpect(MockMvcResultMatchers.status().isOk());
 	}
+	
+	@Test
+	public void testBuyerControllerForDeletingProductFromCart() throws Exception{
+		this.mockMvc .perform(MockMvcRequestBuilders.delete("/api/products/delete_from_cart/11"))
+		.andExpect(MockMvcResultMatchers.status().isOk());
+	}
+	
+	@Test
+	public void testBuyerControllerForDeletingProductFromSaveProducts() throws Exception{
+		this.mockMvc .perform(MockMvcRequestBuilders.delete("/api/products/delete_from save_product/1"))
+		.andExpect(MockMvcResultMatchers.status().isOk());
+	}
+
 }

@@ -9,13 +9,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.example.easybuy_utility_service.controller.UtilityController;
 import com.example.easybuy_utility_service.domain.Registration;
+import com.example.easybuy_utility_service.resource.UtilityResource;
 import com.google.gson.Gson;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,14 +30,14 @@ public class UtilityControllerTest {
 	WebApplicationContext webAppContect;
 	
 	@InjectMocks
-	UtilityController utilityController;
+	UtilityResource utilityController;
 	
 	@Before
 	public void setup(){
 		this.mockMvc=MockMvcBuilders.webAppContextSetup(webAppContect).build();
 	}
 	
-	@Test
+	//@Test
 	public void testUtilityController() throws Exception{
 		Registration registration=new Registration();
 		registration.setName("vamsi");
@@ -46,14 +48,21 @@ public class UtilityControllerTest {
 		registration.setImage(null);
 		registration.setRegistrationdate("2001-08-23");
 		registration.setStatus("Waiting");
-		String saveUri=this.mockMvc.perform(MockMvcRequestBuilders.post("/register")
+		String saveUri=this.mockMvc.perform(MockMvcRequestBuilders.post("/api/admin/register_user")
 				.contentType(MediaType.APPLICATION_JSON).content(new Gson().toJson(registration)))
 				.andExpect(MockMvcResultMatchers.status().isCreated()).andReturn().getResponse().getHeader("Location").toString();
 		System.out.println(saveUri);
 		String reg;
-		reg=this.mockMvc.perform(MockMvcRequestBuilders.get("/get_registred/1").contentType(MediaType.APPLICATION_JSON))
+		reg=this.mockMvc.perform(MockMvcRequestBuilders.get("/api/admin/get_registred/1").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk()).andReturn().getResponse().getContentAsString();
 		System.out.println(reg);
+	}
+	
+	@Test
+	public void testUtilityControllerForUpdation() throws Exception{
+		ResultActions updateUri= this.mockMvc.perform(MockMvcRequestBuilders.put("/api/admin/update_status/1/status/Activated")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(MockMvcResultMatchers.status().isOk());
 	}
 
 }

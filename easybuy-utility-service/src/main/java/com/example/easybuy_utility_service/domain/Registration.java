@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import lombok.Data;
 
@@ -24,4 +25,6 @@ public class Registration {
 	String type;
 	Byte [] image;
 	String status;
+	@Transient
+	String password;
 }
