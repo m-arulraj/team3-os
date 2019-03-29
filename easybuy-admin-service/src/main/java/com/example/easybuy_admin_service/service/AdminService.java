@@ -18,6 +18,7 @@ public class AdminService {
 
 	@Autowired
 	ReviewRepository reviewRepository;
+	
 
 	public Complaint getByCompalintId(Long id) {
 		return complaintRepository.getOne(id);
@@ -44,4 +45,24 @@ public class AdminService {
 
 		reviewRepository.deleteById(id);
 	}
+
+	
+
+	public Complaint addComplaint(Complaint complaint) {
+		
+		return complaintRepository.save(complaint);
+	}
+
+	public Review addReview(Review review) {
+
+		return reviewRepository.save(review);
+	}
+
+	public void updateReview(Long id, int rating) {
+		Review revi=reviewRepository.findById(id).get();
+		revi.setRattings(rating);
+		reviewRepository.save(revi);
+	}
+
+	
 }
