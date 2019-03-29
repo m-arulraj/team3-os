@@ -33,11 +33,11 @@ public class HtmlController {
 		return "registration";
 	}
 	
-	@GetMapping(value="/login")
+	/*@GetMapping(value="/login")
 	public String getLogInPage(){
 		System.out.println("login controller");
 		return "login";
-	}
+	}*/
 	
 	@GetMapping(value="/upload")
 	public String getUploadPage(){
@@ -54,6 +54,11 @@ public class HtmlController {
 	@GetMapping(value="/cart")
 	public String getCartPage(){	
 		return "userCart";
+		
+	}
+	@GetMapping(value="/shop")
+	public String getShopPage(){	
+		return "shopDetails";
 		
 	}
 	

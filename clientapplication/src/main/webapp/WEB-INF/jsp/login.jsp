@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -9,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="allproduct.js"></script>
+<!-- <script src="allproduct.js"></script> -->
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 <style>
 /* Full-width input fields */
@@ -167,7 +168,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
  
     <div class="registration-container">
 <div class="registration-form">
-<form action="/action_page.php" style="border:1px solid #ccc">
+<c:url value="/login" var="loginUrl"/>
+<form action="${loginUrl}" method="post" style="border:1px solid #ccc">
 <div class="form-header">
 <h1 class="sign-up-head">Log In</h1>
     <p class="sign-up-text">Please login to easy buy.</p>
@@ -176,11 +178,11 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
     
     <hr>
 
-    <label for="email" class="form-text"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
+    <label for="username" class="form-text"><b>Email</b></label>
+    <input type="text" placeholder="Enter user Name" name="username" required>
 
-    <label for="psw" class="form-text"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="password" class="form-text"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
     
     <label class="form-text">
       <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me

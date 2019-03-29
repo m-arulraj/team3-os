@@ -104,7 +104,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <!-- Top header -->
   <header class="w3-container w3-xlarge log-back" >
     <p class="w3-left logo-head" style="display:inline-block;">Easy Buy</p>
-    <span style="display:inline-block;padding-left: 50%; color:red">Welcome to Easy Buy</span>
+    <span style="display:inline-block;padding-left: 39%; color:red">Welcome to Easy Buy <strong id="user"></strong></span>
     <p class="w3-right">
       <i class="fa fa-shopping-cart w3-margin-right"></i>
       <i class="fa fa-search"></i>
@@ -230,6 +230,8 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("myOverlay").style.display = "none";
 }
+document.getElementById("user").innerHTML=sessionStorage.getItem("userName");
+console.log(sessionStorage.getItem("userName"));
 </script>
 
 </body>

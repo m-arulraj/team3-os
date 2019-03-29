@@ -82,7 +82,7 @@ function getRandom(){
 }
 
 function getDetails(id){
-	window.location="http://127.25.229.35:8090/product/details?id="+id;
+	window.location="http://localhost:8090/product/details?id="+id;
 }
 loadProducts();
 loadCategory();

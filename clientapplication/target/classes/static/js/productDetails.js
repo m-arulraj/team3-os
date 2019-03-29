@@ -48,8 +48,8 @@ function showCartMessage(){
 
 function addToCart(){
 	
-
-	let cartObject={customerfk:2,productfk:2/*product.id*/};
+   /* if()*/
+	let cartObject={customerfk:1,productfk:product.id};
 	let jsonString=JSON.stringify(cartObject);
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
@@ -87,5 +87,9 @@ function formatDateField(field){
 		field="0"+field;
 	}
 	return field
+}
+
+function redirect2Shop(){
+	window.location="http://localhost:8090/shop?id="+product.id;
 }
 loadDetails();

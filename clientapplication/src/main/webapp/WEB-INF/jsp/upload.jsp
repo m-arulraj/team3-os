@@ -1,33 +1,107 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-      pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<title>Easy Buy</title>
+<title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="/js/productUpload.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
-<script src="/js/cart.js"></script>
 <style>
-.img-wrapper{
-    display: inline-block;
-    width: 30%;
-    height: 250px;
-    margin:15px;
+/* Full-width input fields */
+input[type=text], input[type=password], select,input[type=file],input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  /* #ffffff */
 }
-img {
-    width: 100%; /* or any custom size */
-    height: 100%; 
-    object-fit: contain;
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
 }
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+.registration-form{
+   width:50%;
+   margin:auto;
+}
+.registration-container{
+padding-top:40px;
+padding-bottom:35px;
+}
+
+.form-header{
+background-color:deepskyblue;
+    padding:2% 0;
+}
+.sign-up-head{
+width:50%;
+margin:auto;
+}
+.sign-up-text{
+padding-left:4%
+}
+
 .my-img-container{
-    display: inline-block;
-    width: 100%;
-    height: inherit;
-    margin: 5px;
+ margin: 5px;
 }
 .logo-box{
  width:200px;
@@ -38,67 +112,11 @@ padding-right:100px;
 }
 .logo-head{
    font-family: 'Sofia';
-   color:red;
-   margin:0;
-   padding-top:3%
 }
-.post-product{
-margin-top:50px;
+
+.form-text{
+color:aliceblue;
 }
-.product-text{
- text-align: center;
-}
-.right-image-container{
-width:50%;
-}
-.log-back{
-background-image:url('/images/log-back.png');
-    background-repeat: no-repeat;
-    background-position: bottom
-    }
-    .cart-container{
-    width: 72%;
-    margin: auto;
-    padding-top: 13px;
-    border-style: none solid solid solid;
-    border-radius: 10%;
-    }
-    .cart-item{
-    width: 100%;
-    display: block;
-    background-color: cyan;
-    padding: 217px 10px -17px;
-    margin: 16px 0;
-    padding: 10px;
-    }
-    .btn{
-       background-color: fuchsia;
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    width: 14%;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    }
-    .remove-btn{
-      background-color: #f44336;
-    }
-    .save-btn{
-    
-    }
-    .left{
-       display: inline-block;
-       width: 40%;
-    }
-    .total-amount{
-      display: block;
-    width: 50%;
-    margin: auto;
-    padding: 10px 0;
-    }
 .w3-sidebar a {font-family: "Roboto", sans-serif}
 body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 </style>
@@ -109,24 +127,12 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
   <div class="w3-container w3-display-container w3-padding-16">
     <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-    <div class="logo-box"><img class="logo" src="/images/log.png"></div>
-	<h1 class="logo-head" style="">EasyBuy</h1>
-  </div>
-  <div class=" w3-large w3-text-grey" style="font-weight:bold">
-    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
-      Category<i class="fa fa-caret-down"></i>
-    </a>
-    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-    
-    <span onclick='categoryClickEvent()' class="w3-bar-item w3-button">All</span>
-      
-    </div>
+    <div class="logo-box"><img class="logo" src="/images/eas.jpg"></div>
+	<h1 class="logo-head" style="color:red;margin:0">EasyBuy</h1>
   </div>
   <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
   <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
-  <a href="/registration"  class="w3-bar-item w3-button w3-padding">Sign Up</a>
-  <div class="right-img-container" ><img class="right-img" src="/images/Lenovo-laptop.png"></div>
 </nav>
 
 <!-- Top menu on small screens -->
@@ -139,47 +145,76 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 <!-- !PAGE CONTENT! -->
-<div class="w3-main" style="margin-left:250px">
+<div class="w3-main"style="margin-left:250px">
+<div style="background-image:url('/images/hd.jpg'); background-repeat: no-repeat;background-size: cover;">
 
-  <!-- Push down content on small screens -->
+<!-- Push down content on small screens -->
   <div class="w3-hide-large" style="margin-top:83px"></div>
   
   <!-- Top header -->
-  <header class="w3-container w3-xlarge log-back" >
-    <p class="w3-left logo-head" style="display:inline-block;">Easy Buy</p>
-    <span style="display:inline-block;padding-left: 39%; color:red">Welcome to Easy Buy <strong id="user"></strong></span>
+  <header class="w3-container w3-xlarge"  >
+    <div>
     <p class="w3-right">
-    <i class="fa fa-shopping-cart w3-margin-right">
-    <strong id="cartQuant" style="color: red;vertical-align: super;font-size: 17px;"></strong>
-    </i>
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
       <i class="fa fa-search"></i>
     </p>
+	</div>
   </header>
 
   <!-- Image header -->
-  <div class="w3-display-container w3-container">
-<!--     <img src="/images/jeans.jpg" alt="Jeans" style="width:100%">
-    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
-      <h1 class="w3-jumbo w3-hide-small">New arrivals</h1>
-      <h1 class="w3-hide-large w3-hide-medium">New arrivals</h1>
-      <h1 class="w3-hide-small">COLLECTION 2016</h1>
-      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">SHOP NOW</a></p>
-    </div> -->
-  </div>
+ 
 
-  <div class="w3-container w3-text-grey" id="jeans">
+   <!-- Registration Form Header -->
+ 
+    <div class="registration-container">
+<div class="registration-form">
+<form action="/action_page.php" style="border:1px solid #ccc" enctype="multipart/form-data">
+<div class="form-header">
+<strong class="sign-up-head">Add Product</strong> 
+	</div>
+  <div class="container">
     
-  </div>
+    <hr>
 
+    <label for="file" class="form-text"><b>Choose Image</b></label>
+    <div style="display:inline-block;"></div>
+    <input type="file" style="color:transparent;visibility:hidden" name="file" required>
+
+    <label for="name" class="form-text"><b>Product Name</b></label>
+    <input type="text" placeholder="Enter Product" name="name">
+    
+    <label for="price" class="form-text"><b>Product Cost</b></label>
+    <input type="number" placeholder="Enter Price" name="price">
+    
+    <label for="description" class="form-text"><b>Product Details</b></label>
+    <input type="text" placeholder="Enter Details" name="description">
+    
+    <label for="manufacturerfk" class="form-text"><b>Manufacturer Code</b></label>
+    <input type="text" value="2" name="manufacturerfk" disabled>
+    
+    <label for="productcategoryfk" class="form-text"><b>Ma</b></label>
+    <select  name="productcategoryfk">
+     
+    </select>
+    <label class="form-text">
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+    </label>
+    <div class="clearfix">
+      <button type="reset" class="cancelbtn">Reset</button>
+      <button type="submit" class="signupbtn">Log in</button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+  
+</div>
+ 
   <!-- Product grid -->
-  <div class="w3-row w3-grayscale ">
-  <div class="cart-container">
-  </div>
-	<div class=" w3-display-container  w3-container product-items"></div>
-  </div>
+ 
 
   <!-- Subscribe section -->
-  <div class="w3-container w3-black w3-padding-32 post-product">
+  <div class="w3-container w3-black w3-padding-32">
     <h1>Subscribe</h1>
     <p>To get special offers and VIP treatment:</p>
     <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
@@ -206,6 +241,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
         <p><a href="#">About us</a></p>
         <p><a href="#">We're hiring</a></p>
         <p><a href="#">Support</a></p>
+        <p><a onclick="redirect2ProductUpload()">Sell Product</a></p>
         <p><a href="#">Find store</a></p>
         <p><a href="#">Shipment</a></p>
         <p><a href="#">Payment</a></p>
@@ -251,35 +287,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   </div>
 </div>
 </div>
-<div id="user" style="visibility:hidden">${pageContext["request"].userPrincipal.principal}</div>
-<script>
-// Accordion 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-
-// Click on the "Jeans" link on page load to open the accordion for demo purposes
-document.getElementById("myBtn").click();
 
 
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("myOverlay").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-  document.getElementById("myOverlay").style.display = "none";
-}
-console.log(JSON.stringify(document.getElementById("user").innerHTML));
-
-</script>
 </body>
 </html>
-      
+    

@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="allproduct.js"></script>
+<script src="/js/allproduct.js"></script>
 <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 <style>
 /* Full-width input fields */
@@ -212,6 +212,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
 
     <div class="clearfix">
       <a href="/login" type="button" class="cancelbtn">Log In</a>
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
       <input type="submit" value="Sign up"  class="cancelbtn green-btn">
     </div>
   </div>

@@ -128,7 +128,7 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   <header class="w3-container w3-xlarge log-back" >
     <p class="w3-left logo-head">Easy Buy</p>
     <p class="w3-right">
-      <a class="cart-anchor" href="/cart"><i class="fa fa-shopping-cart w3-margin-right"></i></a>
+      <a class="cart-anchor" href="http://localhost:8090/cart"><i class="fa fa-shopping-cart w3-margin-right"></i></a>
       <i class="fa fa-search"></i>
     </p>
   </header>
@@ -142,7 +142,8 @@ body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
   
     <button onclick="addToCart()" class="w3-button w3-red w3-margin-bottom">Add To Cart</button>
     <span id="cart-message"></span><br>
-     <button onclick="placeOrder()" class="w3-button w3-red w3-margin-bottom green-btn">Buy Now</button>
+     <!-- <button onclick="placeOrder()" class="w3-button w3-red w3-margin-bottom green-btn">Buy Now</button> -->
+     <button onclick="redirect2Shop()" class="w3-button w3-red w3-margin-bottom green-btn">Buy Now</button>
   </div>
 
   <!-- Product grid -->
